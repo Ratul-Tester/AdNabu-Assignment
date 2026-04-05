@@ -4,31 +4,31 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.*;
 
 public class ProductPage {
 
     WebDriver driver;
     WebDriverWait wait;
 
-    By firstProduct = By.cssSelector(".product-item");
-    By addToCartButton = By.name("add");
-    By cartCount = By.className("cart-count");
+    By selectProduct = By.xpath("/html/body/main/section/div/div[2]/div/div/ul/li[1]/div/div/div[2]/div[1]/h3/a");
+    By addToCartButton = By.xpath("/html/body/main/section[1]/section/div/div[2]/product-info/div[4]/product-form/form/div/button");
+    By closingCartButton = By.xpath("/html/body/cart-drawer/div/div[2]/div[1]/button");
+    //By cartCount = By.xpath("/html/body/cart-drawer/div/div[2]/cart-drawer-items/form/div[1]/div/table/tbody/tr/td[4]/div[1]/quantity-input/input");
 
     public ProductPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
 
-    public void selectFirstProduct() {
-        wait.until(ExpectedConditions.elementToBeClickable(firstProduct)).click();
+    public void selectTheProduct() {
+        wait.until(ExpectedConditions.elementToBeClickable(selectProduct)).click();
     }
 
     public void addToCart() {
+
         wait.until(ExpectedConditions.elementToBeClickable(addToCartButton)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(closingCartButton)).click();
     }
 
-    public boolean isCartUpdated() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(cartCount)).isDisplayed();
-    }
+
 }
