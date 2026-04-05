@@ -13,14 +13,15 @@ public class ProductPage {
     By selectProduct = By.xpath("/html/body/main/section/div/div[2]/div/div/ul/li[1]/div/div/div[2]/div[1]/h3/a");
     By addToCartButton = By.xpath("/html/body/main/section[1]/section/div/div[2]/product-info/div[4]/product-form/form/div/button");
     By closingCartButton = By.xpath("/html/body/cart-drawer/div/div[2]/div[1]/button");
-    //By cartCount = By.xpath("/html/body/cart-drawer/div/div[2]/cart-drawer-items/form/div[1]/div/table/tbody/tr/td[4]/div[1]/quantity-input/input");
 
     public ProductPage(WebDriver driver, WebDriverWait wait) {
+
         this.driver = driver;
         this.wait = wait;
     }
 
     public void selectTheProduct() {
+
         wait.until(ExpectedConditions.elementToBeClickable(selectProduct)).click();
     }
 

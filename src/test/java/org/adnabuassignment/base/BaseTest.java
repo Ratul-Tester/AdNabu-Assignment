@@ -13,7 +13,9 @@ public class BaseTest {
     protected WebDriverWait wait;
 
     @BeforeMethod
+    // To check everything is good
     public void setup() {
+
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://adnabu-store-assignment1.myshopify.com/password");
@@ -22,6 +24,7 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
+
         driver.quit();
     }
 }

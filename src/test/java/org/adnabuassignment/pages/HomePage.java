@@ -17,6 +17,7 @@ public class HomePage {
     }
 
     public void searchProduct(String productName) {
+
         driver.findElement(searchIcon).click();
         driver.findElement(searchField).sendKeys(productName);
         driver.findElement(searchButton).click();

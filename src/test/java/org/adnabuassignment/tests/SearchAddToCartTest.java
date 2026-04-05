@@ -14,7 +14,10 @@ public class SearchAddToCartTest extends BaseTest {
 
     @BeforeMethod
     public void startTest() {
+
+        // To check everything is good and working
         setup();
+
         // Initialize page objects
         loginPage = new LoginPage(driver, wait);
         homePage = new HomePage(driver);
@@ -38,7 +41,7 @@ public class SearchAddToCartTest extends BaseTest {
         productPage.addToCart();
 
         // Again Search same product
-        homePage.searchProduct("Skate Board");
+        homePage.searchProduct("Ski Wax");
 
         // Select first product
         productPage.selectTheProduct();
@@ -50,6 +53,7 @@ public class SearchAddToCartTest extends BaseTest {
 
     @AfterTest
     public void endTest() {
+
         tearDown();
     }
 }
